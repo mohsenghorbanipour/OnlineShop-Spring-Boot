@@ -23,6 +23,8 @@ public class Product {
     private List<Feature> features;
     @ManyToMany
     private List<Size> sizes;
+    private  boolean enable;
+    private boolean isExist;
 
     public long getId() {
         return id;
@@ -102,5 +104,21 @@ public class Product {
 
     public void setSizes(List<Size> sizes) {
         this.sizes = sizes;
+    }
+
+    public boolean isEnable() {
+        return enable;
+    }
+
+    public void setEnable(boolean enable) {
+        this.enable = enable;
+    }
+
+    public boolean isExist() {
+        return isExist;
+    }
+
+    public void setExist(boolean exist) {
+        isExist = exist;
     }
 }

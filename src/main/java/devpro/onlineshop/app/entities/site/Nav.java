@@ -13,6 +13,7 @@ public class Nav {
     private long id;
     private String title;
     private String link;
+    private boolean enable;
 
     public long getId() {
         return id;
@@ -36,5 +37,13 @@ public class Nav {
 
     public void setLink(String link) {
         this.link = link;
+    }
+
+    public boolean isEnable() {
+        return enable;
+    }
+
+    public void setEnable(boolean enable) {
+        this.enable = enable;
     }
 }

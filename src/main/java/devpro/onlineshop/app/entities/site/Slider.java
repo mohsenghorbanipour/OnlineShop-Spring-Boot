@@ -1,9 +1,6 @@
 package devpro.onlineshop.app.entities.site;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Slider {
@@ -15,7 +12,9 @@ public class Slider {
     private String image;
     private String description;
     private String link;
-    private int order;
+    @Column(name = "item_order")
+    private int itemOrder;
+    private boolean enable;
 
     public long getId() {
         return id;
@@ -58,10 +57,26 @@ public class Slider {
     }
 
     public int getOrder() {
-        return order;
+        return itemOrder;
     }
 
     public void setOrder(int order) {
-        this.order = order;
+        this.itemOrder = order;
+    }
+
+    public int getItemOrder() {
+        return itemOrder;
+    }
+
+    public void setItemOrder(int itemOrder) {
+        this.itemOrder = itemOrder;
+    }
+
+    public boolean isEnable() {
+        return enable;
+    }
+
+    public void setEnable(boolean enable) {
+        this.enable = enable;
     }
 }

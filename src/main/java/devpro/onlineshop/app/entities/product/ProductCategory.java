@@ -14,6 +14,7 @@ public class ProductCategory {
     private String title;
     private String description;
     private String image;
+    private boolean enable;
 
     public long getId() {
         return id;
@@ -45,5 +46,13 @@ public class ProductCategory {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public boolean isEnable() {
+        return enable;
+    }
+
+    public void setEnable(boolean enable) {
+        this.enable = enable;
     }
 }

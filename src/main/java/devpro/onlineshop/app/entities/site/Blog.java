@@ -1,5 +1,6 @@
 package devpro.onlineshop.app.entities.site;
 
+import devpro.onlineshop.app.enums.BlogStatus;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,7 +19,8 @@ public class Blog {
     private String description;
     private String image;
     private long visitCount;
-    private Date poblishDate;
+    private Date publishDate;
+    private BlogStatus status;
 
     public long getId() {
         return id;
@@ -69,10 +71,18 @@ public class Blog {
     }
 
     public Date getPoblishDate() {
-        return poblishDate;
+        return publishDate;
     }
 
     public void setPoblishDate(Date poblishDate) {
-        this.poblishDate = poblishDate;
+        this.publishDate = poblishDate;
+    }
+
+    public BlogStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(BlogStatus status) {
+        this.status = status;
     }
 }
