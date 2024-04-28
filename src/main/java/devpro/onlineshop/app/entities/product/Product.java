@@ -1,6 +1,8 @@
 package devpro.onlineshop.app.entities.product;
 
 import jakarta.persistence.*;
+
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -25,6 +27,7 @@ public class Product {
     private List<Size> sizes;
     private  boolean enable;
     private boolean isExist;
+    private Date addDate;
 
     public long getId() {
         return id;
@@ -120,5 +123,13 @@ public class Product {
 
     public void setExist(boolean exist) {
         isExist = exist;
+    }
+
+    public Date getAddDate() {
+        return addDate;
+    }
+
+    public void setAddDate(Date addDate) {
+        this.addDate = addDate;
     }
 }

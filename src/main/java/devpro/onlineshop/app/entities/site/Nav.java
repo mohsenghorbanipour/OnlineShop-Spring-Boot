@@ -14,6 +14,7 @@ public class Nav {
     private String title;
     private String link;
     private boolean enable;
+    private int itemOrder;
 
     public long getId() {
         return id;
@@ -45,5 +46,13 @@ public class Nav {
 
     public void setEnable(boolean enable) {
         this.enable = enable;
+    }
+
+    public int getItemOrder() {
+        return itemOrder;
+    }
+
+    public void setItemOrder(int itemOrder) {
+        this.itemOrder = itemOrder;
     }
 }
