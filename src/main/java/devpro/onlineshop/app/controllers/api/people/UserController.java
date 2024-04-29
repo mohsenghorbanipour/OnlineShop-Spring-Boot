@@ -29,7 +29,7 @@ public class UserController {
                     "Incorrect Username Or Password"
             );
         } else {
-            new ServiceResponse<User>(
+            return new ServiceResponse<User>(
                     ResponseStatus.SUCCESS,
                     userData
             );
