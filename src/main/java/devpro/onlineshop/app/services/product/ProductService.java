@@ -1,13 +1,10 @@
 package devpro.onlineshop.app.services.product;
 
 import devpro.onlineshop.app.entities.product.Product;
-import devpro.onlineshop.app.entities.site.Blog;
 import devpro.onlineshop.app.helper.exceptions.DataNotFoundException;
 import devpro.onlineshop.app.repositories.product.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -22,9 +19,9 @@ public class ProductService {
         return  repository.findAllByCategory(categoryId);
     }
 
-    public List<Product> search(String search) {
-        return repository.findAllByEnableIsTrueAndTitleContainsOrDescriptionContains(search);
-    }
+//    public List<Product> search(String search) {
+////        return repository.findAllByEnableIsTrueAndTitleContainsOrDescriptionContains(search);
+//    }
 
     public Product getById(long Id) {
         Optional<Product> data = repository.findById(Id);

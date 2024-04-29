@@ -132,4 +132,31 @@ public class Product {
     public void setAddDate(Date addDate) {
         this.addDate = addDate;
     }
+
+    public void removeColor(long id) {
+        Color color = getColors().stream().filter(x->x.getId() == id).findFirst().get();
+        getColors().remove(color);
+    }
+
+    public void addColor(Color color) {
+        getColors().add(color);
+    }
+
+    public void removeFeature(long id) {
+        Feature feature = getFeatures().stream().filter(x->x.getId() == id).findFirst().get();
+        getFeatures().remove(feature);
+    }
+
+    public void addFeature(Feature feature) {
+        getFeatures().add(feature);
+    }
+
+    public void removeSize(long id) {
+        Size size = getSizes().stream().filter(x->x.getId() == id).findFirst().get();
+        getColors().remove(size);
+    }
+
+    public void addSize(Size size) {
+        getSizes().add(size);
+    }
 }

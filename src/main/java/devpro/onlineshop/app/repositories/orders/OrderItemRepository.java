@@ -1,10 +1,9 @@
 package devpro.onlineshop.app.repositories.orders;
 
 import devpro.onlineshop.app.entities.orders.OrderItem;
-import devpro.onlineshop.app.entities.site.Blog;
-import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface OrderItemRepository extends PagingAndSortingRepository<OrderItem, Long> {
+public interface OrderItemRepository extends JpaRepository<OrderItem, Long> {
 }
