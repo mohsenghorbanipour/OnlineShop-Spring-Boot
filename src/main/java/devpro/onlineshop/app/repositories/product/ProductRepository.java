@@ -15,5 +15,4 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     @Query("from Product where enable = true and (title like concat('%',:search,'%') or description like concat('%',:search,'%' ))")
     List<Product> findAllByEnableIsTrueAndTitleContainsOrDescriptionContains(String search);
 
-
 }

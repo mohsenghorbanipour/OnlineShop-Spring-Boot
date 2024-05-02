@@ -19,9 +19,9 @@ public class ProductService {
         return  repository.findAllByCategory(categoryId);
     }
 
-//    public List<Product> search(String search) {
-////        return repository.findAllByEnableIsTrueAndTitleContainsOrDescriptionContains(search);
-//    }
+    public List<Product> search(String search) {
+        return repository.findAllByEnableIsTrueAndTitleContainsOrDescriptionContains(search);
+    }
 
     public Product getById(long Id) {
         Optional<Product> data = repository.findById(Id);

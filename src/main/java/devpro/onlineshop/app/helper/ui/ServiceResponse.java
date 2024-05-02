@@ -45,7 +45,7 @@ public class ServiceResponse<T> implements Serializable {
         this.hasError = false;
     }
 
-    public ServiceResponse(ResponseStatus responseStatus, Exception exception) {
+    public ServiceResponse(Exception exception) {
         this.data = new ArrayList<>();
         this.responseStatus = ResponseStatus.EXCEPTION;
         this.message = exception.getMessage();
