@@ -39,45 +39,45 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ServiceResponse<User> getById(@PathVariable long id) {
+    public ServiceResponse<UserViewModel> getById(@PathVariable long id) {
         try {
             User result = service.getById(id);
-            return new ServiceResponse<User>(
+            return new ServiceResponse<UserViewModel>(
                     ResponseStatus.SUCCESS,
-                    result
+                    new UserViewModel(result)
             );
         } catch (Exception e) {
-            return  new ServiceResponse<User>(
+            return new ServiceResponse<UserViewModel>(
                     e
             );
         }
     }
 
     @PostMapping("/add")
-    public ServiceResponse<User> add(@RequestBody User data) {
+    public ServiceResponse<UserViewModel> add(@RequestBody User data) {
         try {
             User result = service.add(data);
-            return new ServiceResponse<User>(
+            return new ServiceResponse<UserViewModel>(
                     ResponseStatus.SUCCESS,
-                    result
+                    new UserViewModel(result)
             );
         } catch (Exception e) {
-            return  new ServiceResponse<User>(
+            return  new ServiceResponse<UserViewModel>(
                     e
             );
         }
     }
 
     @PutMapping("/")
-    public ServiceResponse<User> update(@RequestBody User data) {
+    public ServiceResponse<UserViewModel> update(@RequestBody User data) {
         try {
             User result = service.update(data);
-            return new ServiceResponse<User>(
+            return new ServiceResponse<UserViewModel>(
                     ResponseStatus.SUCCESS,
-                    result
+                    new UserViewModel(result)
             );
         } catch (Exception e) {
-            return  new ServiceResponse<User>(
+            return  new ServiceResponse<UserViewModel>(
                     e
             );
         }
@@ -95,6 +95,23 @@ public class UserController {
             return  new ServiceResponse<Boolean>(
                     e
             );
+        }
+    }
+
+    @PutMapping("/change-pass")
+    public ServiceResponse<UserViewModel> changePassword(@RequestBody UserViewModel data) {
+        try {
+            User result = service.changePassword(
+                    data.getId(),
+                    data.getPassword(),
+                    data.getNewPassword()
+            );
+            return new ServiceResponse<UserViewModel>(
+                    ResponseStatus.SUCCESS,
+                    new UserViewModel(result)
+            );
+        } catch (Exception e) {
+            return new ServiceResponse<UserViewModel>(e);
         }
     }
 

@@ -92,7 +92,7 @@ public class BlogController {
     }
 
     @PutMapping("/increaseVisit/{id}")
-    public ServiceResponse<Blog> update(@PathVariable long id) {
+    public ServiceResponse<Blog> increaseVisitCount(@PathVariable long id) {
         try {
             Blog result = service.increaseVisitCountById(id);
             return new ServiceResponse<Blog>(

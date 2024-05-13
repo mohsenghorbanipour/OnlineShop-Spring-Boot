@@ -14,9 +14,12 @@ public class UserViewModel {
     private UserRole role;
     private boolean enable;
     private String token;
+    private String newPassword;
 
     public UserViewModel() {
     }
+
+
 
     public UserViewModel(User user) {
         setId(user.getId());
@@ -98,5 +101,13 @@ public class UserViewModel {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public String getNewPassword() {
+        return newPassword;
+    }
+
+    public void setNewPassword(String newPassword) {
+        this.newPassword = newPassword;
     }
 }
