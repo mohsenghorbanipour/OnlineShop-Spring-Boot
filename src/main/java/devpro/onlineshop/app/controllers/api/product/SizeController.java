@@ -1,60 +1,61 @@
-package devpro.onlineshop.app.controllers.api.orders;
+package devpro.onlineshop.app.controllers.api.product;
 
-import devpro.onlineshop.app.entities.orders.OrderItem;
+import devpro.onlineshop.app.entities.product.Size;
 import devpro.onlineshop.app.helper.ui.ResponseStatus;
 import devpro.onlineshop.app.helper.ui.ServiceResponse;
-import devpro.onlineshop.app.services.orders.OrderItemService;
+import devpro.onlineshop.app.services.product.SizeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+
 @RestController
-@RequestMapping("/api/order-item")
-public class OrderItemController {
+@RequestMapping("/api/size")
+public class SizeController {
 
     @Autowired
-    private OrderItemService service;
-
+    private SizeService service;
+    
 
     @GetMapping("/{id}")
-    public ServiceResponse<OrderItem> getById(@PathVariable long id) {
+    public ServiceResponse<Size> getById(@PathVariable long id) {
         try {
-            OrderItem result = service.getById(id);
-            return new ServiceResponse<OrderItem>(
+            Size result = service.getById(id);
+            return new ServiceResponse<Size>(
                     ResponseStatus.SUCCESS,
                     result
             );
         } catch (Exception e) {
-            return  new ServiceResponse<OrderItem>(
+            return  new ServiceResponse<Size>(
                     e
             );
         }
     }
 
     @PostMapping("/add")
-    public ServiceResponse<OrderItem> add(@RequestBody OrderItem data) {
+    public ServiceResponse<Size> add(@RequestBody Size data) {
         try {
-            OrderItem result = service.add(data);
-            return new ServiceResponse<OrderItem>(
+            Size result = service.add(data);
+            return new ServiceResponse<Size>(
                     ResponseStatus.SUCCESS,
                     result
             );
         } catch (Exception e) {
-            return  new ServiceResponse<OrderItem>(
+            return  new ServiceResponse<Size>(
                     e
             );
         }
     }
 
     @PutMapping("/")
-    public ServiceResponse<OrderItem> update(@RequestBody OrderItem data) {
+    public ServiceResponse<Size> update(@RequestBody Size data) {
         try {
-            OrderItem result = service.update(data);
-            return new ServiceResponse<OrderItem>(
+            Size result = service.update(data);
+            return new ServiceResponse<Size>(
                     ResponseStatus.SUCCESS,
                     result
             );
         } catch (Exception e) {
-            return  new ServiceResponse<OrderItem>(
+            return  new ServiceResponse<Size>(
                     e
             );
         }

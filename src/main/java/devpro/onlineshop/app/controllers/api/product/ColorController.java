@@ -1,60 +1,63 @@
-package devpro.onlineshop.app.controllers.api.orders;
+package devpro.onlineshop.app.controllers.api.product;
 
-import devpro.onlineshop.app.entities.orders.OrderItem;
+import devpro.onlineshop.app.entities.product.Color;
 import devpro.onlineshop.app.helper.ui.ResponseStatus;
 import devpro.onlineshop.app.helper.ui.ServiceResponse;
-import devpro.onlineshop.app.services.orders.OrderItemService;
+import devpro.onlineshop.app.services.product.ColorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
+
 @RestController
-@RequestMapping("/api/order-item")
-public class OrderItemController {
+@RequestMapping("/api/color")
+public class ColorController {
 
     @Autowired
-    private OrderItemService service;
+    private ColorService service;
 
 
     @GetMapping("/{id}")
-    public ServiceResponse<OrderItem> getById(@PathVariable long id) {
+    public ServiceResponse<Color> getById(@PathVariable long id) {
         try {
-            OrderItem result = service.getById(id);
-            return new ServiceResponse<OrderItem>(
+            Color result = service.getById(id);
+            return new ServiceResponse<Color>(
                     ResponseStatus.SUCCESS,
                     result
             );
         } catch (Exception e) {
-            return  new ServiceResponse<OrderItem>(
+            return  new ServiceResponse<Color>(
                     e
             );
         }
     }
 
     @PostMapping("/add")
-    public ServiceResponse<OrderItem> add(@RequestBody OrderItem data) {
+    public ServiceResponse<Color> add(@RequestBody Color data) {
         try {
-            OrderItem result = service.add(data);
-            return new ServiceResponse<OrderItem>(
+            Color result = service.add(data);
+            return new ServiceResponse<Color>(
                     ResponseStatus.SUCCESS,
                     result
             );
         } catch (Exception e) {
-            return  new ServiceResponse<OrderItem>(
+            return  new ServiceResponse<Color>(
                     e
             );
         }
     }
 
     @PutMapping("/")
-    public ServiceResponse<OrderItem> update(@RequestBody OrderItem data) {
+    public ServiceResponse<Color> update(@RequestBody Color data) {
         try {
-            OrderItem result = service.update(data);
-            return new ServiceResponse<OrderItem>(
+            Color result = service.update(data);
+            return new ServiceResponse<Color>(
                     ResponseStatus.SUCCESS,
                     result
             );
         } catch (Exception e) {
-            return  new ServiceResponse<OrderItem>(
+            return  new ServiceResponse<Color>(
                     e
             );
         }

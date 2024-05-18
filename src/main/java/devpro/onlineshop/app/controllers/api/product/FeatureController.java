@@ -1,60 +1,61 @@
-package devpro.onlineshop.app.controllers.api.orders;
+package devpro.onlineshop.app.controllers.api.product;
 
-import devpro.onlineshop.app.entities.orders.OrderItem;
+import devpro.onlineshop.app.entities.product.Feature;
 import devpro.onlineshop.app.helper.ui.ResponseStatus;
 import devpro.onlineshop.app.helper.ui.ServiceResponse;
-import devpro.onlineshop.app.services.orders.OrderItemService;
+import devpro.onlineshop.app.services.product.FeatureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+
 @RestController
-@RequestMapping("/api/order-item")
-public class OrderItemController {
+@RequestMapping("/api/feature")
+public class FeatureController {
 
     @Autowired
-    private OrderItemService service;
+    private FeatureService service;
 
 
     @GetMapping("/{id}")
-    public ServiceResponse<OrderItem> getById(@PathVariable long id) {
+    public ServiceResponse<Feature> getById(@PathVariable long id) {
         try {
-            OrderItem result = service.getById(id);
-            return new ServiceResponse<OrderItem>(
+            Feature result = service.getById(id);
+            return new ServiceResponse<Feature>(
                     ResponseStatus.SUCCESS,
                     result
             );
         } catch (Exception e) {
-            return  new ServiceResponse<OrderItem>(
+            return  new ServiceResponse<Feature>(
                     e
             );
         }
     }
 
     @PostMapping("/add")
-    public ServiceResponse<OrderItem> add(@RequestBody OrderItem data) {
+    public ServiceResponse<Feature> add(@RequestBody Feature data) {
         try {
-            OrderItem result = service.add(data);
-            return new ServiceResponse<OrderItem>(
+            Feature result = service.add(data);
+            return new ServiceResponse<Feature>(
                     ResponseStatus.SUCCESS,
                     result
             );
         } catch (Exception e) {
-            return  new ServiceResponse<OrderItem>(
+            return  new ServiceResponse<Feature>(
                     e
             );
         }
     }
 
     @PutMapping("/")
-    public ServiceResponse<OrderItem> update(@RequestBody OrderItem data) {
+    public ServiceResponse<Feature> update(@RequestBody Feature data) {
         try {
-            OrderItem result = service.update(data);
-            return new ServiceResponse<OrderItem>(
+            Feature result = service.update(data);
+            return new ServiceResponse<Feature>(
                     ResponseStatus.SUCCESS,
                     result
             );
         } catch (Exception e) {
-            return  new ServiceResponse<OrderItem>(
+            return  new ServiceResponse<Feature>(
                     e
             );
         }
