@@ -13,7 +13,7 @@ public class Product {
     private long id;
     private String title;
     private String description;
-    private long price;
+    private Long price;
     private String image;
     private long visitCount;
     @ManyToOne
@@ -25,8 +25,8 @@ public class Product {
     private List<Feature> features;
     @ManyToMany
     private List<Size> sizes;
-    private  boolean enable;
-    private boolean isExist;
+    private  Boolean enable;
+    private Boolean isExist;
     private Date addDate;
 
     public long getId() {
@@ -53,11 +53,11 @@ public class Product {
         this.description = description;
     }
 
-    public long getPrice() {
+    public Long getPrice() {
         return price;
     }
 
-    public void setPrice(long price) {
+    public void setPrice(Long price) {
         this.price = price;
     }
 
@@ -109,19 +109,19 @@ public class Product {
         this.sizes = sizes;
     }
 
-    public boolean isEnable() {
+    public Boolean isEnable() {
         return enable;
     }
 
-    public void setEnable(boolean enable) {
+    public void setEnable(Boolean enable) {
         this.enable = enable;
     }
 
-    public boolean isExist() {
+    public Boolean isExist() {
         return isExist;
     }
 
-    public void setExist(boolean exist) {
+    public void setExist(Boolean exist) {
         isExist = exist;
     }
 

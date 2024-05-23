@@ -78,7 +78,7 @@ public class ProductController {
         }
     }
 
-    @PutMapping("/")
+    @PutMapping("")
     public ServiceResponse<Product> update(@RequestBody Product data) {
         try {
             Product result = service.update(data);

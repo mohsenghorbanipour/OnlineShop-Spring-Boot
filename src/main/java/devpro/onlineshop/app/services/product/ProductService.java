@@ -40,16 +40,36 @@ public class ProductService {
                     "data with id" + data.getId() + "not found"
             );
         }
-        oldDate.setTitle(data.getTitle());
-        oldDate.setEnable(data.isEnable());
-        oldDate.setImage(data.getImage());
-        oldDate.setDescription(data.getDescription());
-        oldDate.setExist(data.isExist());
-        oldDate.setPrice(data.getPrice());
-        oldDate.setColors(data.getColors());
-        oldDate.setCategory(data.getCategory());
-        oldDate.setFeatures(data.getFeatures());
-        oldDate.setSizes(data.getSizes());
+        if(data.getTitle() != null) {
+            oldDate.setTitle(data.getTitle());
+        }
+        if(data.getImage() != null) {
+            oldDate.setImage(data.getImage());
+        }
+        if(data.getDescription() != null) {
+            oldDate.setDescription(data.getDescription());
+        }
+        if(data.getPrice() != null) {
+            oldDate.setPrice(data.getPrice());
+        }
+        if(data.getColors() != null) {
+            oldDate.setColors(data.getColors());
+        }
+        if(data.getCategory() != null) {
+            oldDate.setCategory(data.getCategory());
+        }
+        if(data.getFeatures() != null) {
+            oldDate.setFeatures(data.getFeatures());
+        }
+        if(data.getSizes() != null) {
+            oldDate.setSizes(data.getSizes());
+        }
+        if(data.isEnable() != null) {
+            oldDate.setEnable(data.isEnable());
+        }
+        if(data.isExist() != null) {
+            oldDate.setExist(data.isExist());
+        }
         return repository.save(oldDate);
     }
 
